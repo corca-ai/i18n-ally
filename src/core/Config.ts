@@ -584,6 +584,10 @@ export class Config {
     return this.getConfig<string>('translate.openai.apiModel') ?? 'gpt-3.5-turbo'
   }
 
+  static get openaiApiPrompt() {
+    return this.getConfig<string |undefined>('translate.openai.prompt') ?? 'gpt-3.5-turbo'
+  }
+
   static get telemetry(): boolean {
     return workspace.getConfiguration().get('telemetry.enableTelemetry') as boolean
   }
